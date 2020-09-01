@@ -1,4 +1,6 @@
-.body{
-    padding: 25px 25px;
-    align-items: center;
+.headerbody {
+    margin: auto;
+  width: 90%;
+  padding: 10px;
+  font-size: large;
 }

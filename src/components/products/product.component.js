@@ -2,9 +2,14 @@ import React from 'react';
 import {Card , Button, Row, Col } from 'react-bootstrap'
 
 const Product = ({products}) => {
+    console.log(products);
+    //products = Array.from(products);
+    
     return (
         <Row>
-        { products.map( product => 
+            
+        { 
+        products && products.map( product => 
                     
             <Col key={product.id}  md={4}>
         <Card   key={product.id} >

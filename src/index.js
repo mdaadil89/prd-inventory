@@ -9,7 +9,7 @@ import './index.css';
 import App from './App';
 
 const store = configureStore();
-store.dispatch(loadProducts())
+store.dispatch(loadProducts())  
 
 ReactDOM.render(
     < Provider store={store}>

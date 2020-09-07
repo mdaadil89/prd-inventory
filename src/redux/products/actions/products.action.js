@@ -5,6 +5,11 @@ export function loadProductsSuccess(products) {
     return { type : types.LOAD_PRODUCTS_SUCCESS, products}
 }
 
+export function addProductSuccess(prod){
+    return {type: types.ADD_PRODUCT_SUCCESS, prod}
+}
+
+
 export function loadProducts(){
     return function(dispatch){
         return ProductApi.getAllProducts().then(products => {
@@ -13,4 +18,14 @@ export function loadProducts(){
             throw(error);
         })
     }
+}
+
+export function addProduct(prod) {
+    return function(disptach) {
+        return ProductApi.addProduct(prod).then( prod => {
+            disptach(addProductSuccess(prod));
+        }).catch(error => {
+            throw(error);
+        })
+    } 
 }

@@ -71,6 +71,36 @@
       "manufacturer": "Apple INC",
       "price": 70000,
       "qty": 5
+    },
+    {
+      "id": "e5cf9f82-462c-4c6d-975d-55a0638d8c4e",
+      "history": {
+        "length": 9,
+        "action": "PUSH",
+        "location": {
+          "pathname": "/signin",
+          "search": "",
+          "hash": "",
+          "key": "y8atsy"
+        }
+      },
+      "location": {
+        "pathname": "/signin",
+        "search": "",
+        "hash": "",
+        "key": "y8atsy"
+      },
+      "match": {
+        "path": "/signin",
+        "url": "/signin",
+        "isExact": true,
+        "params": {}
+      },
+      "name": "Aadil",
+      "desc": "fffefefef",
+      "manu": "efefefef",
+      "qty": 32323,
+      "price": 32323
     }
   ],
   "users": [

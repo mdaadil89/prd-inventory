@@ -10,7 +10,9 @@ class ProductAddEdit extends React.Component {
 
     render() {
         return (
+            
             <FormikAddProductForm />
+            
         );
     }
 }

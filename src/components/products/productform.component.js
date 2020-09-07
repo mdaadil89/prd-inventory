@@ -1,69 +1,60 @@
 import React from 'react'
 import { withFormik, Form, Field  } from 'formik'
-import {  Button, Container, Row, Col } from 'react-bootstrap'
 import uuid from 'uuid/v4' ;
 import * as Yup from 'yup'
 
 const ProductForm = ({ values, errors, touched, isSubmitting }) => (
     <div className="jumbotron">
-        <Container>
-        <Row>
-        <div className="col-md-6 offset-sm-3">
-                <h2>Add New Product</h2>
+    <div className="container">
+        <div className="row">
+            <div className="col-md-6 offset-md-3">
+                <h2><center>Add New Product</center></h2>
+                <div>
                 <Form >
-                         <Col sm={8}>
                          <div className="form-group">
-                            <label htmlFor="name" >Product Name  </label> <br/>
+                            <label htmlFor="name" >Product Name  </label> 
                             <Field type="text"  name="name" placeholder="Enter Product Name" />
                             </div>
-                         </Col> 
-
-                         <Col sm={8}>
+                       
                          <div className="form-group">
-                           <label htmlFor="desc" >Product description</label><br/>
+                           <label htmlFor="desc" >Product description</label>
                           <Field type="text" name="desc"  placeholder="Enter Product Description" />
                           </div>
-                        </Col> 
+                        
 
-                        <Col sm={8}>
                         <div className="form-group">
-                            <label htmlFor="manu">Manufacturer</label><br/>
+                            <label htmlFor="manu">Manufacturer</label>
                             <Field type="text" name="manu" placeholder="Enter Product Manufacturer" />
                             </div>
-                         </Col> 
+                         
 
-                         <Col sm={8}>
                          <div className="form-group">
-                            <label htmlFor="price">Price</label><br/>
+                            <label htmlFor="price">Price</label>
                             <Field type="number" name="price"  placeholder="Enter Product Price" />
                             </div>
-                         </Col> 
                          
-                         <Col sm={8}>
+                         
                          <div className="form-group">
-                                  <label htmlFor="qty" >Quantity</label><br/>
+                                  <label htmlFor="qty" >Quantity</label>
                                   <Field type="number" name="qty"   placeholder="Enter Product Quantity"/>
-                                  </div>
-                        </Col>
+                                  
+                        </div>
                         
 
 
-                        <Row>
-                            <Col sm={4}>
+                        <div className="form-group">
                         <button type="submit"  className="btn btn-primary"  disabled={isSubmitting}  >Submit</button>
-                            </Col>
-
-                            <Col sm={4}>
+                            
                         <button type="button" className="btn btn-dark"  >Close</button>
-                            </Col>
-                         </Row>
+                        </div>
                          
-                </Form></div>
-                </Row>
-                
-        </Container>
-    
-    </div>
+                </Form>
+                </div>
+                </div>
+              </div>
+                     </div>
+                </div>
+            
 )
 
 

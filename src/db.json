@@ -101,6 +101,31 @@
       "manu": "efefefef",
       "qty": 32323,
       "price": 32323
+    },
+    {
+      "id": "f0a2e0cc-fe67-4ef8-b486-bed1d97ff7a8",
+      "history": {
+        "length": 27,
+        "action": "POP",
+        "location": {
+          "pathname": "/signout",
+          "search": "",
+          "hash": "",
+          "key": "zjv1u4"
+        }
+      },
+      "location": {
+        "pathname": "/signout",
+        "search": "",
+        "hash": "",
+        "key": "zjv1u4"
+      },
+      "match": {
+        "path": "/signout",
+        "url": "/signout",
+        "isExact": true,
+        "params": {}
+      }
     }
   ],
   "users": [

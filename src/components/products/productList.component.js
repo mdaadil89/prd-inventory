@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux';
 import Product from './product.component'
+
 import {  Button, Container, Row, Col } from 'react-bootstrap'
 
 class ProductList extends React.Component {
@@ -40,10 +41,15 @@ class ProductList extends React.Component {
     }
 }
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state)  {
+  
+  const {products } = (state && state.products) || [] ;
+   console.log("state = "+ JSON.stringify(state, null, 4))
+   console.log("products ="+ JSON.stringify(products, null, 4)) 
     return {
-      products: state
-    };
+      products
+    };  
+    
   }
 
 export default connect(mapStateToProps)(ProductList)

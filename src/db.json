@@ -105,49 +105,31 @@
   ],
   "users": [
     {
-      "id": "d5582a1b-c757-4aad-8b15-08ed4d133450",
-      "mailid": "sura123@example.com",
-      "password": "surajit",
-      "firstname": "Surajit",
-      "lastname": "Mondal",
-      "location": "Kolkata",
+      "id": "8621b78a-e5e5-4eff-8b18-ba16cf97e5e4",
+      "firstName": "Sur",
+      "lastName": "Mon",
+      "email": "sm@g.com",
+      "password": "kkkkkkk",
+      "location": "Kol",
       "mobile": "0123456789"
     },
     {
-      "id": "7f0a5350-da5b-4910-907d-b08fae9c1d41",
-      "mailid": "su@example.com",
-      "password": "surajittttt",
-      "firstname": "surait",
-      "lastname": "mondal",
-      "location": "calcutta",
-      "mobile": "012455355355"
+      "id": "2fb74041-8863-49ee-8914-3e3804a3ebac",
+      "firstName": "Aad",
+      "lastName": "Hus",
+      "email": "ma@g.com",
+      "password": "lkkjjjjj",
+      "location": "Kol",
+      "mobile": "+91349595999"
     },
     {
-      "id": "d435e9ab-464a-43fb-8d01-33af29a5ed66",
-      "mailid": "Su@example.com",
-      "password": "surajit",
-      "firstname": "surajit",
-      "lastname": "mondal",
+      "id": "a6151c8a-23c4-4465-bf72-4ba857c08eeb",
+      "firstName": "Surajit",
+      "lastName": "Mondal",
+      "email": "sura@gmail.com",
+      "password": "hdhdhdhhdhdh",
       "location": "Kolkata",
-      "mobile": "0123456789"
-    },
-    {
-      "id": "8eea9320-c6da-44b2-b045-f0c51fd21f10",
-      "mailid": "Sura@example.com",
-      "password": "surajit",
-      "firstname": "surajit",
-      "lastname": "mondal",
-      "location": "Mumbai",
-      "mobile": "9888877777"
-    },
-    {
-      "id": "0b4c1a98-ba00-4dbb-98a1-487458187f66",
-      "mailid": "Aadil@example.com",
-      "password": "Aadilh",
-      "firstname": "Aadil",
-      "lastname": "Hussain",
-      "location": "Kolkata",
-      "mobile": "0987635568"
+      "mobile": "+91349595999"
     }
   ]
 }

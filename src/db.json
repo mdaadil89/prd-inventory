@@ -130,6 +130,15 @@
       "password": "hdhdhdhhdhdh",
       "location": "Kolkata",
       "mobile": "+91349595999"
+    },
+    {
+      "id": "a7a06213-9538-4e03-a151-64f06a774c64",
+      "firstName": "Aadil",
+      "lastName": "Hussain",
+      "email": "mdaadilhus9@gmail.com",
+      "password": "123456",
+      "location": "kolkata",
+      "mobile": "9123709523"
     }
   ]
 }

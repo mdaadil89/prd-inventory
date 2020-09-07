@@ -47,7 +47,7 @@ function mapStateToProps(state)  {
    console.log("state = "+ JSON.stringify(state, null, 4))
    console.log("products ="+ JSON.stringify(products, null, 4)) 
     return {
-      products
+      products : state.products
     };  
     
   }

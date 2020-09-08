@@ -71,53 +71,44 @@
       "manufacturer": "Apple INC",
       "price": 70000,
       "qty": 5
-    }
-  ],
-  "users": [
-    {
-      "id": "d5582a1b-c757-4aad-8b15-08ed4d133450",
-      "mailid": "sura123@example.com",
-      "password": "surajit",
-      "firstname": "Surajit",
-      "lastname": "Mondal",
-      "location": "Kolkata",
-      "mobile": "0123456789"
     },
     {
-      "id": "7f0a5350-da5b-4910-907d-b08fae9c1d41",
-      "mailid": "su@example.com",
-      "password": "surajittttt",
-      "firstname": "surait",
-      "lastname": "mondal",
-      "location": "calcutta",
-      "mobile": "012455355355"
+      "id": "f9d4123f-93dd-4985-b42f-4614850f344f"
     },
     {
-      "id": "d435e9ab-464a-43fb-8d01-33af29a5ed66",
-      "mailid": "Su@example.com",
-      "password": "surajit",
-      "firstname": "surajit",
-      "lastname": "mondal",
-      "location": "Kolkata",
-      "mobile": "0123456789"
+      "id": "e291d314-ec58-4b41-9d18-43081f253e58"
     },
     {
-      "id": "8eea9320-c6da-44b2-b045-f0c51fd21f10",
-      "mailid": "Sura@example.com",
-      "password": "surajit",
-      "firstname": "surajit",
-      "lastname": "mondal",
-      "location": "Mumbai",
-      "mobile": "9888877777"
+      "id": "645a9926-9a35-43cf-a1d4-29fdfad79306",
+      "name": "jjjjjjjjjjj",
+      "desc": "kkkk",
+      "manu": "lllllllllllllllllll",
+      "price": 7777,
+      "qty": 99999
     },
     {
-      "id": "0b4c1a98-ba00-4dbb-98a1-487458187f66",
-      "mailid": "Aadil@example.com",
-      "password": "Aadilh",
-      "firstname": "Aadil",
-      "lastname": "Hussain",
-      "location": "Kolkata",
-      "mobile": "0987635568"
+      "id": "425bbaea-b381-4e5c-bdfb-fffd09d6548c",
+      "name": "minnu.05",
+      "desc": "kkkk",
+      "manu": "lllllllllllllllllll",
+      "price": 11,
+      "qty": 11
+    },
+    {
+      "id": "f9c94212-5098-4441-a748-3aba0dc04bf5",
+      "name": "minnu.05",
+      "desc": "kkkk",
+      "manu": "lllllllllllllllllll",
+      "price": 11,
+      "qty": 11
+    },
+    {
+      "id": "b11a3e60-a73b-4026-ac3c-48a9ac29b0c7",
+      "name": "minnu.05",
+      "desc": "kkkk",
+      "manu": "lllllllllllllllllll",
+      "price": 11,
+      "qty": 11
     }
   ]
 }

@@ -5,10 +5,12 @@ import authenticationReducer from './users/reducers/authentication.reducer'
 
 
 
+
 const rootReducer = combineReducers({
   user: userReducer,
   products: productReducer,
   authentication : authenticationReducer
+
 });
 
 export default rootReducer;

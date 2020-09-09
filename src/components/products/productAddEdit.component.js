@@ -12,8 +12,6 @@ class ProductAddEdit extends React.Component {
         return (
             
             <FormikAddProductForm />
-                        
-            
         )
     }
 }

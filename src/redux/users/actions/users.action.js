@@ -1,3 +1,4 @@
+
 import React from 'react';
 import * as types from './action.types';
 import UserApi from '../../../data/user.api'
@@ -8,9 +9,11 @@ import { createBrowserHistory } from 'history';
 export const history = createBrowserHistory();
 
 
+
 export function addUserSuccess(user){
     return {type: types.ADD_USER_SUCCESS, user}
 }
+
 
 
 export function addUser(user) {
@@ -21,6 +24,7 @@ export function addUser(user) {
             throw(error);
         })
     } 
+
 }
 
 
@@ -52,3 +56,4 @@ export function logout() {
     UserApi.logout();
     return { type: types.LOGOUT };
 } 
+

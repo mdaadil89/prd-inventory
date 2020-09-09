@@ -1,24 +1,20 @@
+
+import React from 'react';
 import * as types from './action.types';
 import UserApi from '../../../data/user.api'
+import {Redirect} from 'react-router-dom'
 
-// export function loadProductsSuccess(products) {
-//     return { type : types.LOAD_PRODUCTS_SUCCESS, products}
-// }
+import { createBrowserHistory } from 'history';
+
+export const history = createBrowserHistory();
+
 
 
 export function addUserSuccess(user){
     return {type: types.ADD_USER_SUCCESS, user}
 }
 
-// export function loadProducts(){
-//     return function(dispatch){
-//         return ProductApi.getAllProducts().then(products => {
-//             dispatch(loadProductsSuccess(products));
-//         }).catch(error => {
-//             throw(error);
-//         })
-//     }
-// }
+
 
 export function addUser(user) {
     return function(disptach) {
@@ -28,4 +24,36 @@ export function addUser(user) {
             throw(error);
         })
     } 
+
 }
+
+
+
+export function login(email, password) {
+    return dispatch => {
+        dispatch(request({ email }));
+
+        UserApi.login(email, password)
+            .then(
+                user => { 
+                    dispatch(success(user));
+                    history.push('/signin');
+                    //return <Redirect from="/signin" to="/products" />
+                },
+                error => {
+                    dispatch(failure(error.toString()));
+                    //dispatch(alertActions.error(error.toString()));
+                }
+            );
+    };
+
+    function request(user) { return { type: types.LOGIN_REQUEST, user } }
+    function success(user) { return { type: types.LOGIN_SUCCESS, user } }
+    function failure(error) { return { type: types.LOGIN_FAILURE, error } }
+}
+ 
+export function logout() {
+    UserApi.logout();
+    return { type: types.LOGOUT };
+} 
+

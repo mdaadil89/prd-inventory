@@ -12,8 +12,7 @@ class ProductAddEdit extends React.Component {
         return (
             
             <FormikAddProductForm />
-            
-        );
+        )
     }
 }
     function mapDispatchToProps(dispatch) {

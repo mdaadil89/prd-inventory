@@ -6,7 +6,8 @@ import Header from './components/header/header.component';
 import AboutPage from './pages/about/aboutpage.component'
 import ProductsPage from './pages/products/productsPage.component'
 import RegistrationPage from './pages/registration/RegistrationPage.component'
-import ProductAddEdit from './components/products/productAddEdit.component'
+import ProductAddEditPage from './pages/products/productsAddPage.component';
+import Login from './pages/login/LoginPage.component'
 
 
 class App extends React.Component {
@@ -18,9 +19,10 @@ class App extends React.Component {
         <Switch>
         <Route exact path='/' component={AboutPage} />
         <Route  path='/products' component={ProductsPage} />
-        <Route  path='/signin' component={RegistrationPage} />
-        <Route  path='/signout' component={ProductAddEdit} />
+        <Route  path='/signin' component={Login} />
+        <Route  path='/signout' component={ProductAddEditPage} />
         <Route  path='/chart' component={AboutPage} />
+        <Route  path='/register' component={RegistrationPage} />
         </Switch>
       </div>
     )

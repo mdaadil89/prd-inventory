@@ -37,7 +37,7 @@ class ProductList extends React.Component {
                     <SearchBox searchChange={this.onSearchChange}/>
 
                     <Col md={3}>
-                    <Button onClick={() => this.props.history.push('/products/add')}>Add New Product</Button>
+                    <Button onClick={() => this.props.history.push('/products/add/')}>Add New Product</Button>
                     </Col>
 
                     <Col md={3}>

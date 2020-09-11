@@ -19,12 +19,13 @@ class App extends React.Component {
         <Switch>
         <Route exact path='/' component={AboutPage} />
         <Route exact path='/products' component={ProductsPage} />
-        <Route exact path='/products/:id' component={AboutPage} />
+        <Route exact path='/products/add' ><ProductAddEdit type={"Add"} /></Route>
+        <Route  path='/products/:id' component={AboutPage} />
         <Route  path='/signin' component={Login} />
         <Route  path='/signout' component={AboutPage} />
         <Route  path='/chart' component={AboutPage} />
         <Route  path='/register' component={RegistrationPage} />
-        <Route exact path='/products/add' ><ProductAddEdit type={"Add"} /></Route>
+        
         <Route  path='/products/edit/:id' ><ProductAddEdit type= {"Edit"}/></Route>
         </Switch>
       </div>

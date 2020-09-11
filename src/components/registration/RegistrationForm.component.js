@@ -9,7 +9,7 @@ const phoneRegex = RegExp(
   );
 
 const AddUserForm = ({ status,errors, touched,isSubmitting}) => (
-            <div>
+            <div> 
                 <Form>
                         <div className="form-group">
                             <label htmlFor="firstName">First Name</label>

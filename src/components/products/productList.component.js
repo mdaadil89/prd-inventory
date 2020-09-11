@@ -1,40 +1,55 @@
 import React from 'react'
 import {connect} from 'react-redux';
 import Product from './product.component'
-
+import SearchBox from '../../components/searchbox.component'
 import {  Button, Container, Row, Col } from 'react-bootstrap'
+import { withRouter } from 'react-router-dom';
 
 class ProductList extends React.Component {
     constructor(props){
         super(props)
-        
+        this.state={
+          searchfield:''
+        }
     }
 
+    onSearchChange  = (event) => {
+      this.setState({searchfield : event.target.value})
+
+    }
+
+ 
+
     render() {
+
+      const {searchfield} =this.state
+      const {products} = this.props
+      const filteredProducts = products.filter(product => {
+        return product.name.toLowerCase().includes(searchfield.toLowerCase());
+      })
         return(
             <Container >
                     <h1>Product Inventory</h1>
                     <br/><br/>
                <Row>
-                    <Col md={4}>
-                    <label >Search Product :  </label>
-                     <input type='text' name="filter" />
+                    
+
+                    <SearchBox searchChange={this.onSearchChange}/>
+
+                    <Col md={3}>
+                    <Button onClick={() => this.props.history.push('/products/add')}>Add New Product</Button>
                     </Col>
 
-                    <Col md={2}>
-                    <Button>Add New Product</Button>
-                    </Col>
-
-                    <Col md={2}>
+                    <Col md={3}>
                     <Button>Delete Selected</Button>
                     </Col>
 
-                    <Col md={2}>
+                    <Col md={3}>
                     <Button>Customize View</Button>
                     </Col>
                 </Row>
                 <br/><br/>
-                  <Product products={this.props.products}/>
+                  <Product products={filteredProducts} {...this.props}/>
             </Container> 
             
         )
@@ -43,13 +58,10 @@ class ProductList extends React.Component {
 
 function mapStateToProps(state)  {
   
-  const {products } = (state && state.products) || [] ;
-   console.log("state = "+ JSON.stringify(state, null, 4))
-   console.log("products ="+ JSON.stringify(products, null, 4)) 
     return {
       products : state.products
     };  
     
   }
 
-export default connect(mapStateToProps)(ProductList)
+export default withRouter(connect(mapStateToProps)(ProductList))

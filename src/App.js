@@ -6,7 +6,7 @@ import Header from './components/header/header.component';
 import AboutPage from './pages/about/aboutpage.component'
 import ProductsPage from './pages/products/productsPage.component'
 import RegistrationPage from './pages/registration/RegistrationPage.component'
-import ProductAddEditPage from './pages/products/productsAddPage.component';
+import ProductAddEdit from './components/products/productAddEdit.component'
 import Login from './pages/login/LoginPage.component'
 
 
@@ -18,11 +18,14 @@ class App extends React.Component {
         <Header />
         <Switch>
         <Route exact path='/' component={AboutPage} />
-        <Route  path='/products' component={ProductsPage} />
+        <Route exact path='/products' component={ProductsPage} />
+        <Route exact path='/products/:id' component={AboutPage} />
         <Route  path='/signin' component={Login} />
-        <Route  path='/signout' component={ProductAddEditPage} />
+        <Route  path='/signout' component={AboutPage} />
         <Route  path='/chart' component={AboutPage} />
         <Route  path='/register' component={RegistrationPage} />
+        <Route exact path='/products/add' ><ProductAddEdit type={"Add"} /></Route>
+        <Route  path='/products/edit/:id' ><ProductAddEdit type= {"Edit"}/></Route>
         </Switch>
       </div>
     )

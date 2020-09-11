@@ -2,7 +2,7 @@
 import React from 'react';
 import * as types from './action.types';
 import UserApi from '../../../data/user.api'
-import {Redirect} from 'react-router-dom'
+
 
 import { createBrowserHistory } from 'history';
 

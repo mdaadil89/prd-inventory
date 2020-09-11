@@ -9,6 +9,10 @@ export function addProductSuccess(prod){
     return {type: types.ADD_PRODUCT_SUCCESS, prod}
 }
 
+export function editProductSuccess(prod){
+    return {type: types.EDIT_PRODUCT_SUCCESS, prod}
+}
+
 
 export function loadProducts(){
     return function(dispatch){
@@ -24,6 +28,16 @@ export function addProduct(prod) {
     return function(disptach) {
         return ProductApi.addProduct(prod).then( prod => {
             disptach(addProductSuccess(prod));
+        }).catch(error => {
+            throw(error);
+        })
+    } 
+}
+
+export function editProduct(prod, id) {
+    return function(disptach) {
+        return ProductApi.editProduct(prod, id).then( prod => {
+            disptach(editProductSuccess(prod));
         }).catch(error => {
             throw(error);
         })

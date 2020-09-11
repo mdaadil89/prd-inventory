@@ -1,7 +1,8 @@
 import React from 'react';
 import {Card , Button, Row, Col } from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 
-const Product = ({products}) => {
+const Product = ({products, match}) => {
     console.log(products);
     //products = Array.from(products);
     
@@ -19,8 +20,8 @@ const Product = ({products}) => {
                                 <b>Made by {product.manufacturer}</b><br/>
                                 <b>Rs. {product.price}</b><br/>
                                 <b>Qty : {product.qty}</b><br/>
-                            <Button variant="primary" style={{ margin:  "10px"}}>Edit</Button>
-                            <Button  variant="primary">View Detail</Button>
+                               < Link style={{margin: "5px 5px"}} className ="btn  text-white btn-primary" to={`${match.url}/edit/`+product.id}>Edit</Link>
+                             <Link  style={{margin: "5px 5px"}} className ="btn  text-white btn-primary"  to={`${match.url}/`+product.id} >View Detail</Link>
                             </Card.Body>  
                          </Card> 
                      </Col> )

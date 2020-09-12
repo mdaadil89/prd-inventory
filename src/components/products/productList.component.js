@@ -27,6 +27,7 @@ class ProductList extends React.Component {
       const filteredProducts = products.filter(product => {
         return product.name.toLowerCase().includes(searchfield.toLowerCase());
       })
+      console.log('Filtered Products',filteredProducts )
         return(
             <Container >
                     <h1>Product Inventory</h1>
@@ -49,7 +50,7 @@ class ProductList extends React.Component {
                     </Col>
                 </Row>
                 <br/><br/>
-                  <Product products={filteredProducts} {...this.props}/>
+                  <Product products={filteredProducts} match = {this.props.match} />
             </Container> 
             
         )

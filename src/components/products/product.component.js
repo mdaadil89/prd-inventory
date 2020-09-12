@@ -20,7 +20,7 @@ const Product = ({products, match}) => {
                                 <b>Made by {product.manufacturer}</b><br/>
                                 <b>Rs. {product.price}</b><br/>
                                 <b>Qty : {product.qty}</b><br/>
-                               < Link style={{margin: "5px 5px"}} className ="btn  text-white btn-primary" to={`${match.url}/edit/`+product.id}>Edit</Link>
+                               < Link style={{margin: "5px 5px"}} className ="btn  text-white btn-primary" to={`edit/`+product.id}>Edit</Link>
                              <Link  style={{margin: "5px 5px"}} className ="btn  text-white btn-primary"  to={`${match.url}/`+product.id} >View Detail</Link>
                             </Card.Body>  
                          </Card> 

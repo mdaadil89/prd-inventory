@@ -12,7 +12,7 @@ const Product = ({products, match}) => {
         { 
         products && products.map( product => 
                     <Col key={product.id}  md={4}>
-                        <Card   key={product.id} >
+                        <Card   border="primary" key={product.id}  style={{marginBottom: '15px'}}>
                         <Card.Header><input type='checkbox' style={{align:"left"}} />  <b >{product.name}</b></Card.Header>
                             <Card.Body>
                             <br/>

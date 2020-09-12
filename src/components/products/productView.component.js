@@ -8,7 +8,7 @@ const ProductView = (props) => {
 
     return (
       <div style={{ justifyContent: "centre"}}>
-        <Card  style={{ width: '20rem', margin: '0 auto', float: 'none', marginBottom: '10px' }}>
+        <Card  border="primary" style={{ width: '20rem', margin: '0 auto', float: 'none', marginBottom: '10px' }}>
                         <Card.Header><b >{prod.name}</b></Card.Header>
                             <Card.Body>
                             <br/>

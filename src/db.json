@@ -14,7 +14,7 @@
       "description": "Nice phone to use",
       "manufacturer": "One Plus co",
       "price": 35000,
-      "qty": 25
+      "qty": 10
     },
     {
       "id": "67afee0b-e7fb-4fb4-b025-769db48123e7",
@@ -87,7 +87,7 @@
       "manufacturer": "Apple Inc",
       "price": 94000,
       "qty": 20
-        }
+    }
   ],
   "users": [
     {

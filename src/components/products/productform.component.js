@@ -54,7 +54,7 @@ const ProductForm = ( props) => {
           console.log('submitProps', submitProps)
           submitProps.setSubmitting(false)
           submitProps.resetForm()
-          alert("Product has been added")
+          alert("Product has been edited")
           history.push('/products')
 
           }

@@ -2,15 +2,23 @@ import React from 'react'
 import {connect} from 'react-redux';
 import Product from './product.component'
 import * as prodActions from '../../redux/products/actions/products.action'
-
+import SearchBox from '../../components/searchbox.component'
 import {  Button, Container, Row, Col } from 'react-bootstrap'
+import { withRouter } from 'react-router-dom';
+
 
 class ProductList extends React.Component {
     constructor(props){
         super(props)
+        this.state={
+          searchfield:''
+        }
         this.id=[];
     }
 
+    onSearchChange  = (event) => {
+      this.setState({searchfield : event.target.value})
+    }
 
     addId(id){
       
@@ -52,30 +60,37 @@ class ProductList extends React.Component {
 
     }
     render() {
+
+      const {searchfield} =this.state
+      const {products} = this.props
+      const filteredProducts = products.filter(product => {
+        return product.name.toLowerCase().includes(searchfield.toLowerCase());
+      })
+      console.log('Filtered Products',filteredProducts )
+
         return(
             <Container >
                     <h1>Product Inventory</h1>
                     <br/><br/>
                <Row>
-                    <Col md={4}>
-                    <label >Search Product :  </label>
-                     <input type='text' name="filter" />
+                    <SearchBox searchChange={this.onSearchChange}/>
+
+
+                    <Col md={3}>
+                    <Button onClick={() => this.props.history.push('/products/add')}>Add New Product</Button>
                     </Col>
 
-                    <Col md={2}>
-                    <Button>Add New Product</Button>
-                    </Col>
-
-                    <Col md={2}>
+                    <Col md={3}>
                     <Button>Delete Selected</Button>
                     </Col>
 
-                    <Col md={2}>
+                    <Col md={3}>
                     <Button>Customize View</Button>
                     </Col>
                 </Row>
                 <br/><br/>
-                  <Product products={this.props.products} onchange={(id) => { onchange(id)}}/>
+                <Product products={filteredProducts} match = {this.props.match} />
+                  {/* <Product products={this.props.products} onchange={(id) => { onchange(id)}}/> */}
             </Container> 
             
         )
@@ -101,4 +116,4 @@ function mapStateToProps(state)  {
     };
   }
 
-export default connect(mapStateToProps,mapDispatchToProps)(ProductList)
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(ProductList))

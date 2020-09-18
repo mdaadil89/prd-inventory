@@ -59,7 +59,6 @@ export const deleteProduct = (ids) => {
         }));
         request.then(axios.spread( (...responses) => {
             console.log(responses)
-            loadProducts();
             dispatch(deleteProductSuccess(ids));
         })).catch( errors => console.log(errors)
         )

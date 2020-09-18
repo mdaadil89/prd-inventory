@@ -4,8 +4,6 @@ import {Link} from 'react-router-dom'
 
 const Product = ({products, match, onchange}) => {
 
-    
-
     const addId = (id) => {
         onchange(id);
     }

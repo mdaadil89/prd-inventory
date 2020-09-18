@@ -55,22 +55,6 @@
       "manufacturer": "Apsara",
       "price": 50,
       "qty": 100
-    },
-    {
-      "id": "f0486704-44e5-42-8701-9ab88ae9edbc",
-      "name": "Plantronics",
-      "description": "Good quality headphone",
-      "manufacturer": "Plantronics company",
-      "price": 4500,
-      "qty": 65
-    },
-    {
-      "id": "b8c3842d-48df-479c-b-990ccadb2f40",
-      "name": "IPhone",
-      "description": "It's a branded phone",
-      "manufacturer": "Apple INC",
-      "price": 70000,
-      "qty": 5
     }
   ],
   "users": [

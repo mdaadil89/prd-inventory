@@ -52,14 +52,15 @@ export function editProduct(prod, id) {
 export const deleteProduct = (ids) => {
 
   
-    return function (dispatch) {
+    return function () {
         const request = axios.all(_.map(ids, (id) => 
         {   
             ProductApi.deleteItem(id);
         }));
         request.then(axios.spread( (...responses) => {
             console.log(responses)
-            dispatch(deleteProductSuccess(ids));
+            loadProducts();
+            
         })).catch( errors => console.log(errors)
         )
         }

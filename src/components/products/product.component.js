@@ -2,13 +2,12 @@ import React from 'react';
 import {Card , Button, Row, Col } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 
-const Product = ({products, match}) => {
-    console.log(products);
-    //products = Array.from(products);
+const Product = ({products, match, onchange}) => {
+
     
 
-    const addId = (props,event,id) => {
-        props.onchange(event.target.value);
+    const addId = (id) => {
+        onchange(id);
     }
     
     return (
@@ -18,7 +17,7 @@ const Product = ({products, match}) => {
         products && products.map( product => 
                     <Col key={product.id}  md={4}>
                         <Card   border="primary" key={product.id}  style={{marginBottom: '15px'}}>
-                        <Card.Header><input type='checkbox' onChange={(id)=>addId(product.id)} style={{align:"left"}} />  <b >{product.name}</b></Card.Header>
+                        <Card.Header><input type='checkbox' onClick={() =>addId(product.id)} style={{align:"left"}} />  <b >{product.name}</b></Card.Header>
                             <Card.Body>
                             <br/>
                                 <b>{product.description}</b><br/>

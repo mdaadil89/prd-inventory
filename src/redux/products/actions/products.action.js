@@ -15,8 +15,8 @@ export function editProductSuccess(prod){
     return {type: types.EDIT_PRODUCT_SUCCESS, prod}
 }
 
-export function deleteProductSuccess(products) {
-    return {type: types.DELETE_PRODUCT_SUCCESS, products}    
+export function deleteProductSuccess(ids) {
+    return {type: types.DELETE_PRODUCT_SUCCESS, ids}    
 }
 
 export function loadProducts(){
@@ -49,17 +49,19 @@ export function editProduct(prod, id) {
     } 
 }
 
-export const deleteProduct = (products, callback) => {
+export const deleteProduct = (ids) => {
 
-    const request = axios.all(_.map(products, (product) => 
-    {   
-        ProductApi.deleteItem(product);
-    }));
-    return (dispatch) => {
-        request.then(axios.spread((a, f) => {
-            dispatch(deleteProductSuccess(products));
-        })).then(() => {
-            callback();
-        });
+  
+    return function (dispatch) {
+        const request = axios.all(_.map(ids, (id) => 
+        {   
+            ProductApi.deleteItem(id);
+        }));
+        request.then(axios.spread( (...responses) => {
+            console.log(responses)
+            dispatch(deleteProductSuccess(ids));
+        })).catch( errors => console.log(errors)
+        )
+        }
+
     }
-}

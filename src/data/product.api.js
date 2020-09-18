@@ -34,7 +34,7 @@ export default class ProductApi {
 
        
         static  deleteItem(id) {
-            const endpoint = `http://localhost:4000/products/`+id.id
+            const endpoint = `http://localhost:4000/products/`+id
             return axios.delete(endpoint);
         }
 }

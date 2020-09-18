@@ -22,42 +22,27 @@ class ProductList extends React.Component {
 
     addId(id){
       
-      if(this.id.find(x=>x==id))
+      if(this.id.find(x=>x===id))
        {
         this.id.splice(this.id.indexOf(id),1)
        }
        else{
         this.id.push(id);
        }
-      console.log(this.child.selected);
-       if (this.id.length===0)
- 
-       this.child.selected=true;
-       
-       else
-       this.child.selected=false;
-        
-       console.log(this.child.selected);
+     console.log('Id list', this.id)
     }
 
-    deleteSelected(event){
+    deleteSelected(){
  
-      // console.log("In delete selected");
-      // console.log(event);
-  
-      if(event == "true")
-      {
-        
     
-         // this.productsService.removeProduct(this.id);
-         // this.productsService.getProducts().subscribe((data:any[]) => this.getData())
-  
-          if(this.id.length==1)
-          alert('Selected prodcut is deleted!');
+      this.props.deleteSelected(this.id)
+          if(this.id.length===1)
+        
+          alert('Selected product is deleted!');
           else
           alert('Selected prodcuts are deleted!');
-      }
-
+      
+        this.id=[]
     }
     render() {
 
@@ -66,7 +51,7 @@ class ProductList extends React.Component {
       const filteredProducts = products.filter(product => {
         return product.name.toLowerCase().includes(searchfield.toLowerCase());
       })
-      console.log('Filtered Products',filteredProducts )
+      // console.log('Filtered Products',filteredProducts )
 
         return(
             <Container >
@@ -81,7 +66,7 @@ class ProductList extends React.Component {
                     </Col>
 
                     <Col md={3}>
-                    <Button>Delete Selected</Button>
+                    <Button onClick={() => this.deleteSelected()}>Delete Selected</Button>
                     </Col>
 
                     <Col md={3}>
@@ -89,7 +74,7 @@ class ProductList extends React.Component {
                     </Col>
                 </Row>
                 <br/><br/>
-                <Product products={filteredProducts} match = {this.props.match} />
+                <Product products={filteredProducts} match = {this.props.match} onchange={(id) => { this.addId(id)}} />
                   {/* <Product products={this.props.products} onchange={(id) => { onchange(id)}}/> */}
             </Container> 
             
@@ -99,9 +84,9 @@ class ProductList extends React.Component {
 
 function mapStateToProps(state)  {
   
-  const {products } = (state && state.products) || [] ;
-   console.log("state = "+ JSON.stringify(state, null, 4))
-   console.log("products ="+ JSON.stringify(products, null, 4)) 
+  // const {products } = (state && state.products) || [] ;
+  //  console.log("state = "+ JSON.stringify(state, null, 4))
+  //  console.log("products ="+ JSON.stringify(products, null, 4)) 
     return {
       products : state.products
     };  
@@ -110,7 +95,7 @@ function mapStateToProps(state)  {
 
   function mapDispatchToProps(dispatch) {
     return {
-      deleteSelected: (prod,id) => { dispatch(prodActions.deleteProduct(prod)); },
+      deleteSelected: (ids) => { dispatch(prodActions.deleteProduct(ids)); },
      // editMyProduct: (prod , id) => { dispatch(prodActions.editProduct(prod, id)) ; }
 
     };

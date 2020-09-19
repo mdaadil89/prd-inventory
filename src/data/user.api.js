@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { createBrowserHistory } from 'history';
+ const history = createBrowserHistory();
 
 export default class UserApi {
         static getAllUsers(){
@@ -32,8 +34,10 @@ export default class UserApi {
         }
         
         static logout() {
-            // remove user from local storage to log user out
+            console.log('In api of logout')
             localStorage.removeItem('user');
+            console.log(localStorage.removeItem('user'))
+            history.push('/products/')
         }
 
         //  handleResponse(response) {

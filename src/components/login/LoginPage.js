@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as userActions  from '../../redux/users/actions/users.action' ;
 
@@ -7,14 +7,6 @@ class LoginPage extends React.Component {
     constructor(props) {
         super(props);
 
-        // reset login status
-        if(localStorage.getItem('user')!== undefined){
-            console.log('Yes', this.props.loggingIn)
-            console.log(localStorage.getItem('user'))
-        }
-       
-        else
-        console.log('No')
 
         this.state = {
             email: '',
@@ -46,7 +38,7 @@ class LoginPage extends React.Component {
     }
  
     render() {
-        const { loggingIn } = this.props;
+        console.log(this.props)
         const { email, password, submitted } = this.state;
         return (
             <div className="col-md-6 col-md-offset-3">
@@ -78,8 +70,8 @@ class LoginPage extends React.Component {
 }
 
 function mapStateToProps(state) {
-    const { loggedIn } = state.authentication;
-    return { loggedIn };
+    const { loggingIn } = state.authentication;
+    return { loggingIn };
   }
   
   function mapDispatchToProps(dispatch)  {
@@ -89,5 +81,5 @@ function mapStateToProps(state) {
     } 
   }
 
-const connectedLoginPage = connect(mapStateToProps, mapDispatchToProps)(LoginPage);
+const connectedLoginPage = withRouter(connect(mapStateToProps, mapDispatchToProps)(LoginPage));
 export { connectedLoginPage as LoginPage };

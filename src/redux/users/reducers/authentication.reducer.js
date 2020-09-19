@@ -20,7 +20,8 @@ export default function authentication(state = initialState, action) {
       };
     case types.LOGIN_FAILURE:
       console.log('In Login Failure')
-      return {};
+      return {loggedIn:false};
+      
     case types.LOGOUT:
       console.log('In Logout')
       return {loggedIn:false};

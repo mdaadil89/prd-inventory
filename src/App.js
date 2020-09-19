@@ -1,5 +1,5 @@
 import React from 'react';
-import {  Switch,Route } from 'react-router-dom';
+import {  Switch,Route, Redirect } from 'react-router-dom';
 
 import './App.css';
 import Header from './components/header/header.component';
@@ -17,17 +17,19 @@ import { connect } from 'react-redux';
 class App extends React.Component {
   
   render() {
+    console.log(this.props)
     return(
       <div>
-        <Header logon={this.props.loggedIn} logout={this.props.logout}/>
+        <Header logon={this.props.loggedIn} />
         <Switch>
         <Route exact path='/' component={AboutPage} />
         <Route exact path='/edit/:id' ><ProductAddEdit type= {"Edit"}/></Route>
         <Route exact path='/products/add' ><ProductAddEdit type={"Add"} /></Route>
         <Route exact path='/products' component={ProductsPage} />
         <Route exact path='/products/:id' component={ViewPage} />
-        <Route  path='/signin' component={Login} />
-        <Route  path='/signout' component={AboutPage} />
+        <Route  path='/signin'  >
+          { this.props.loggedIn ? <Redirect to='/register'/> : <Login/>}
+        </Route>
         <Route  path='/chart' component={ChartsComponent} />
         <Route  path='/register' component={RegistrationPage} />
         </Switch>
@@ -44,11 +46,6 @@ function mapStateToProps(state) {
   return { loggedIn: loggedIn };
 }
 
-function mapDispatchToProps(dispatch)  {
-  return {
-    // login: dispatch(userActions.login),
-    logout: dispatch(userActions.logout())
-  } 
-}
 
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+
+export default connect(mapStateToProps)(App);

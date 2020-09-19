@@ -36,14 +36,19 @@ export function login(email, password) {
         UserApi.login(email, password)
             .then(
                 user => { 
-                    dispatch(success(user));
-                    history.push('/signin');
-                    //return <Redirect from="/signin" to="/products" />
-                },
-                error => {
-                    dispatch(failure(error.toString()));
-                    //dispatch(alertActions.error(error.toString()));
+                    if(user === undefined)
+                    dispatch(failure('Not Able to Login'));
+                    else
+                    { 
+                        localStorage.setItem('user', JSON.stringify(user))
+                        console.log( localStorage.getItem('user'))
+                    dispatch(success(email));
+                    
+                
                 }
+                    //return <Redirect from="/signin" to="/products" />
+                }
+                
             );
     };
 

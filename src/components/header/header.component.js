@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import './header.styles.css';
 
-const Header = () => (
+const Header = ({logon, logout}) => (
     <div className='header'>
         <div>
         <Link className='logo-container' to='/'>
@@ -18,12 +18,14 @@ const Header = () => (
         <Link className='option' to='/chart'>
             Charts
         </Link>
-        <Link className='option' to='/signin'>
-            Sign In
-        </Link>
-        <Link className='option' to='/signout'>
-            Sign Out
-        </Link>
+        {logon?
+       <Link className='option' to='/signout' onClick={() => logout}>
+       Sign Out
+</Link>: <Link className='option' to='/signin'>
+        Sign In
+    </Link>
+          }
+         
         </div>
     </div>
 )

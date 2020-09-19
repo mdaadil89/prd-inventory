@@ -8,7 +8,13 @@ class LoginPage extends React.Component {
         super(props);
 
         // reset login status
-        this.props.logout();
+        if(localStorage.getItem('user')!== undefined){
+            console.log('Yes', this.props.loggingIn)
+            console.log(localStorage.getItem('user'))
+        }
+       
+        else
+        console.log('No')
 
         this.state = {
             email: '',
@@ -31,8 +37,10 @@ class LoginPage extends React.Component {
         this.setState({ submitted: true });
         const { email, password } = this.state;
         if (email && password) {
-            this.props.login(email, password);
-            return  <Redirect to="/products" />
+            console.log(this.props.login(email, password))
+            if(this.props.loggingIn=== true)
+            alert('login Succesfull')
+            this.props.history.push('/products/')
         }
       
     }
@@ -60,7 +68,7 @@ class LoginPage extends React.Component {
                     </div>
                     <div className="form-group">
                         <button className="btn btn-primary">Login</button>
-                        {loggingIn}
+                   
                         <Link to="/register" className="btn btn-link">Register</Link>
                     </div>
                 </form>
@@ -69,15 +77,17 @@ class LoginPage extends React.Component {
     }
 }
 
-function mapState(state) {
-    const { loggingIn } = state.authentication;
-    return { loggingIn };
-}
+function mapStateToProps(state) {
+    const { loggedIn } = state.authentication;
+    return { loggedIn };
+  }
+  
+  function mapDispatchToProps(dispatch)  {
+    return {
+      login: (email,password) => {dispatch(userActions.login(email,password))}
+      
+    } 
+  }
 
-const actionCreators = {
-    login: userActions.login,
-    logout: userActions.logout
-};
-
-const connectedLoginPage = connect(mapState, actionCreators)(LoginPage);
+const connectedLoginPage = connect(mapStateToProps, mapDispatchToProps)(LoginPage);
 export { connectedLoginPage as LoginPage };

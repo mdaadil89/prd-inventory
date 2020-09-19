@@ -10,6 +10,8 @@ import RegistrationPage from './pages/registration/RegistrationPage.component'
 import ChartsComponent from './components/charts/charts.component'
 import ProductAddEdit from './components/products/productAddEdit.component'
 import Login from './pages/login/LoginPage.component'
+import * as userActions  from './redux/users/actions/users.action' ;
+import { connect } from 'react-redux';
 
 
 class App extends React.Component {
@@ -17,7 +19,7 @@ class App extends React.Component {
   render() {
     return(
       <div>
-        <Header />
+        <Header logon={this.props.loggedIn} logout={this.props.logout}/>
         <Switch>
         <Route exact path='/' component={AboutPage} />
         <Route exact path='/edit/:id' ><ProductAddEdit type= {"Edit"}/></Route>
@@ -36,4 +38,17 @@ class App extends React.Component {
   
 }
 
-export default App;
+function mapStateToProps(state) {
+  const { loggedIn } = state.authentication;
+  console.log('loggedIn', loggedIn)
+  return { loggedIn: loggedIn };
+}
+
+function mapDispatchToProps(dispatch)  {
+  return {
+    // login: dispatch(userActions.login),
+    logout: dispatch(userActions.logout())
+  } 
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);

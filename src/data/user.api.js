@@ -14,19 +14,20 @@ export default class UserApi {
            }
 
            static login(email, password) {
-            const requestOptions = {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, password })
-            };
+            
+            let url = 'http://localhost:4000/users/'
         
-            return fetch('http://localhost:4000/users/', requestOptions)
-                .then(this.handleResponse)
+            return  axios.get(url)
+                .then( res => { console.log('In Login Api Call', res.data)
+                   return  res.data.filter( user => 
+                    user.email===email && 
+                    user.password===password)
+
+            } )
                 .then(user => {
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
-                    localStorage.setItem('user', JSON.stringify(user));
-        
-                    return user;
+                    console.log('In 2nd part of  Api Call', user[0])
+                    return user[0];
                 });
         }
         
@@ -35,23 +36,23 @@ export default class UserApi {
             localStorage.removeItem('user');
         }
 
-         handleResponse(response) {
-            return response.text().then(text => {
-                const data = text && JSON.parse(text);
-                if (!response.ok) {
-                    if (response.status === 401) {
-                        // auto logout if 401 response returned from api
-                        this.logout();
-                        //location.reload(true);
-                    }
+        //  handleResponse(response) {
+        //     return response.text().then(text => {
+        //         const data = text && JSON.parse(text);
+        //         if (!response.ok) {
+        //             if (response.status === 401) {
+        //                 // auto logout if 401 response returned from api
+        //                 this.logout();
+        //                 //location.reload(true);
+        //             }
         
-                    const error = (data && data.message) || response.statusText;
-                    return Promise.reject(error);
-                }
+        //             const error = (data && data.message) || response.statusText;
+        //             return Promise.reject(error);
+        //         }
         
-                return data;
-            });
-        }
+        //         return data;
+        //     });
+        // }
 
      
 }

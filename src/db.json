@@ -93,6 +93,26 @@
       "password": "123456",
       "location": "kolkata",
       "mobile": "9123709523"
+    },
+    {
+      "id": "a7a06213-9538-4e03-a151-64f06a774c64",
+      "firstName": "Aadil",
+      "lastName": "Hussain",
+      "email": "aadil",
+      "password": "aadil",
+      "location": "kolkata",
+      "mobile": "9123709523"
+    },
+
+    {
+      "id": "9156f101-7d58-4cba-aff0-2839e7e27022",
+      "firstName": "Aadil",
+      "lastName": "Aadil",
+      "email": "a@a.com",
+      "password": "aadila",
+      "location": "kolkata",
+      "mobile": "9123709523"
     }
+   
   ]
 }

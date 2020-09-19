@@ -2,9 +2,9 @@ import React from 'react';
 
 import {LoginPage} from '../../components/login/LoginPage'
 
-const Login = () => (
+const Login = (props) => (
     <div >
-        <LoginPage/>
+        <LoginPage {...props}/>
     </div>
 )
 

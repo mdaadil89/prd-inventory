@@ -24,9 +24,14 @@ const Header = ({logon, logut}) => (
         <Link className='option' to='/signin'>
         Sign In
     </Link>:
+    <>
+    <Link className='option' to='/profile'>
+        Profile
+    </Link>
        <a className='option'  onClick={() =>  logut()}>
        Sign Out
 </a>
+</>
           }
          
         </div>

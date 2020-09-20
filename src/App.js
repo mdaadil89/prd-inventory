@@ -12,6 +12,9 @@ import ProductAddEdit from './components/products/productAddEdit.component'
 import Login from './pages/login/LoginPage.component'
 import * as userActions  from './redux/users/actions/users.action' ;
 import { connect } from 'react-redux';
+import GuardedRoute from './guard.route'
+import Profile from './components/login/profile.component';
+
 
 
 class App extends React.Component {
@@ -23,10 +26,11 @@ class App extends React.Component {
         <Header logon={this.props.loggedIn} />
         <Switch>
         <Route exact path='/' component={AboutPage} />
-        <Route exact path='/edit/:id' ><ProductAddEdit type= {"Edit"}/></Route>
-        <Route exact path='/products/add' ><ProductAddEdit type={"Add"} /></Route>
+        <GuardedRoute exact path='/edit/:id' type= {"Edit"} auth={this.props.loggedIn} component={ProductAddEdit}/>
+        <GuardedRoute exact path='/products/add'  type={"Add"}  auth={this.props.loggedIn} component={ProductAddEdit}/>
         <Route exact path='/products' component={ProductsPage} />
-        <Route exact path='/products/:id' component={ViewPage} />
+        <GuardedRoute exact path='/products/:id' auth={this.props.loggedIn} component={ViewPage} />
+        <GuardedRoute exact path='/profile' auth={this.props.loggedIn} component={Profile} />
         <Route  path='/signin'  >
           { this.props.loggedIn ? <Redirect to='/register'/> : <Login/>}
         </Route>
@@ -43,7 +47,7 @@ class App extends React.Component {
 function mapStateToProps(state) {
   const { loggedIn } = state.authentication;
   console.log('loggedIn', loggedIn)
-  return { loggedIn: loggedIn };
+  return { loggedIn };
 }
 
 

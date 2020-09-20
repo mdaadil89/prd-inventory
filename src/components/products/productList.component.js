@@ -35,19 +35,27 @@ class ProductList extends React.Component {
     deleteSelected(){
  
     
-      this.props.deleteSelected(this.id)
-          if(this.id.length===1)
-        
-          alert('Selected product is deleted!');
-          else
-          alert('Selected prodcuts are deleted!');
+      if(this.id.length === 0)
+      alert("Please Select Items for deletion")
+      
+         
+      if(this.id.length===1)
+          {
+            alert('Selected product is deleted!');
+          this.props.deleteSelected(this.id)
+        }
+          else if(this.id.length>1)
+          {
+            alert('Selected prodcuts are deleted!');
+          this.props.deleteSelected(this.id)
+          }
       
         this.id=[]
     }
     render() {
 
       const {searchfield} =this.state
-      const {products} = this.props
+      const {products, loggedIn} = this.props
       const filteredProducts = products.filter(product => {
         return product.name.toLowerCase().includes(searchfield.toLowerCase());
       })
@@ -66,7 +74,7 @@ class ProductList extends React.Component {
                     </Col>
 
                     <Col md={3}>
-                    <Button onClick={() => this.deleteSelected()}>Delete Selected</Button>
+                    <Button onClick={() => this.deleteSelected()} disabled={!loggedIn}>Delete Selected</Button>
                     </Col>
 
                     <Col md={3}>
@@ -83,12 +91,13 @@ class ProductList extends React.Component {
 }
 
 function mapStateToProps(state)  {
-  
+  const { loggedIn } = state.authentication;
   // const {products } = (state && state.products) || [] ;
   //  console.log("state = "+ JSON.stringify(state, null, 4))
   //  console.log("products ="+ JSON.stringify(products, null, 4)) 
     return {
-      products : state.products
+      products : state.products,
+      loggedIn : loggedIn
     };  
     
   }

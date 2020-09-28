@@ -11,7 +11,15 @@ class ProductList extends React.Component {
     constructor(props){
         super(props)
         this.state={
-          searchfield:''
+          searchfield:'',
+          toggleView:false,
+          togglefield:{
+            pname:true,
+            pdesc:true,
+            pmanu:true,
+            pprice:true,
+            pqty:true
+          }
         }
         this.id=[];
     }
@@ -30,6 +38,11 @@ class ProductList extends React.Component {
         this.id.push(id);
        }
      console.log('Id list', this.id)
+    }
+
+    toggleCustView(){
+
+      this.setState( prevState => prevState.toggleView = !prevState.toggleView)
     }
 
     deleteSelected(){
@@ -52,6 +65,26 @@ class ProductList extends React.Component {
       
         this.id=[]
     }
+    name() {
+      this.setState( prevState => prevState.togglefield.pname = !prevState.togglefield.pname)
+       }
+ 
+desc() {
+  this.setState( prevState => prevState.togglefield.pdesc = !prevState.togglefield.pdesc)
+ }
+ 
+manu () {
+  this.setState( prevState => prevState.togglefield.pmanu = !prevState.togglefield.pmanu)
+ }
+ 
+price() {
+  this.setState( prevState => prevState.togglefield.pprice = !prevState.togglefield.pprice)
+}
+ 
+qty() {
+  this.setState( prevState => prevState.togglefield.pqty = !prevState.togglefield.pqty)
+  }
+
     render() {
 
       const {searchfield} =this.state
@@ -78,11 +111,25 @@ class ProductList extends React.Component {
                     </Col>
 
                     <Col md={3}>
-                    <Button>Customize View</Button>
+                    <Button onClick={()=> this.toggleCustView()}>Customize View</Button>
                     </Col>
                 </Row>
                 <br/><br/>
-                <Product products={filteredProducts} match = {this.props.match} onchange={(id) => { this.addId(id)}} />
+               { this.state.toggleView?<Row>
+                  
+                  <div className="card" style={{width: "20rem"}}>
+                <div className="card-header bg-dark text-white">Select the column you want to hide</div>
+        <div className="card-body">
+
+          <p><input type="checkbox" checked={this.state.togglefield.pname} name="pname" onChange={()=>this.name()} className="card-text"  /> Product Name</p>
+        <p><input type="checkbox" checked={this.state.togglefield.pdesc}  name="pdesc" onChange={()=>this.desc()} className="card-text"/> Description</p> 
+        <p><input type="checkbox" checked={this.state.togglefield.pmanu}   name="pmanu" onChange={()=>this.manu()} className="card-text" /> Manufacturer</p>
+        <p><input type="checkbox" checked={this.state.togglefield.pprice}  name="pprice" onChange={()=>this.price()} className="card-text"/> Price</p>
+        <p><input type="checkbox" checked={this.state.togglefield.pqty}  name="pqty" onChange ={()=>this.qty() }className="card-text"/> Quantity</p> 
+      </div></div>
+                </Row> : <></>}
+                <br/>
+                <Product products={filteredProducts} match = {this.props.match} viewobj={this.state.togglefield} onchange={(id) => { this.addId(id)}} />
                   {/* <Product products={this.props.products} onchange={(id) => { onchange(id)}}/> */}
             </Container> 
             

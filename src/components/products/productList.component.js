@@ -100,8 +100,7 @@ qty() {
                     <br/><br/>
                <Row>
                     <SearchBox searchChange={this.onSearchChange}/>
-
-
+                    
                     <Col md={3}>
                     <Button onClick={() => this.props.history.push('/products/add')}>Add New Product</Button>
                     </Col>
@@ -115,24 +114,25 @@ qty() {
                     </Col>
                 </Row>
                 <br/><br/>
-               { this.state.toggleView?<Row>
-                  
-                  <div className="card" style={{width: "20rem"}}>
-                <div className="card-header bg-dark text-white">UnCheck the column you want to hide</div>
-        <div className="card-body">
 
-          <p><input type="checkbox" checked={this.state.togglefield.pname} name="pname" onChange={()=>this.name()} className="card-text"  /> Product Name</p>
+
+        { this.state.toggleView?<Row>
+        <div className="card" style={{width: "20rem"}}>
+        <div className="card-header bg-dark text-white">UnCheck the column you want to hide</div>
+        <div className="card-body">
+        <p><input type="checkbox" checked={this.state.togglefield.pname} name="pname" onChange={()=>this.name()} className="card-text"  /> Product Name</p>
         <p><input type="checkbox" checked={this.state.togglefield.pdesc}  name="pdesc" onChange={()=>this.desc()} className="card-text"/> Description</p> 
         <p><input type="checkbox" checked={this.state.togglefield.pmanu}   name="pmanu" onChange={()=>this.manu()} className="card-text" /> Manufacturer</p>
         <p><input type="checkbox" checked={this.state.togglefield.pprice}  name="pprice" onChange={()=>this.price()} className="card-text"/> Price</p>
         <p><input type="checkbox" checked={this.state.togglefield.pqty}  name="pqty" onChange ={()=>this.qty() }className="card-text"/> Quantity</p> 
-      </div></div>
-                </Row> : <></>}
-                <br/>
-                <Product products={filteredProducts} match = {this.props.match} viewobj={this.state.togglefield} onchange={(id) => { this.addId(id)}} />
-                  {/* <Product products={this.props.products} onchange={(id) => { onchange(id)}}/> */}
-            </Container> 
-            
+        </div></div>
+        </Row> : <></>}
+
+        <br/>
+
+        <Product products={filteredProducts} match = {this.props.match} viewobj={this.state.togglefield} onchange={(id) => { this.addId(id)}} />
+          {/* <Product products={this.props.products} onchange={(id) => { onchange(id)}}/> */}
+        </Container> 
         )
     }
 }

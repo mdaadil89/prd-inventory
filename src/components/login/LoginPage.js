@@ -41,7 +41,7 @@ class LoginPage extends React.Component {
         console.log(this.props)
         const { email, password, submitted } = this.state;
         return (
-            <div className="col-md-6 col-md-offset-3">
+                <>
                 <h2>Login</h2>
                 <form name="form" onSubmit={this.handleSubmit}>
                     <div className={'form-group' + (submitted && !email ? ' has-error' : '')}>
@@ -64,7 +64,7 @@ class LoginPage extends React.Component {
                         <Link to="/register" className="btn btn-link">Register</Link>
                     </div>
                 </form>
-            </div>
+            </>
         );
     }
 }

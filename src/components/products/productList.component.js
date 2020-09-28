@@ -118,7 +118,7 @@ qty() {
                { this.state.toggleView?<Row>
                   
                   <div className="card" style={{width: "20rem"}}>
-                <div className="card-header bg-dark text-white">Select the column you want to hide</div>
+                <div className="card-header bg-dark text-white">UnCheck the column you want to hide</div>
         <div className="card-body">
 
           <p><input type="checkbox" checked={this.state.togglefield.pname} name="pname" onChange={()=>this.name()} className="card-text"  /> Product Name</p>

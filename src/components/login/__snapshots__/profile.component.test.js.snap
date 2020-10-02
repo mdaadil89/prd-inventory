@@ -1,0 +1,188 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile Snapshot renders correctly 1`] = `
+<Profile>
+  <div>
+    <br />
+     
+    <br />
+    <br />
+    <br />
+    <br />
+    <div
+      className="container bootstrap snippet"
+    >
+      <div
+        className="panel-body inf-content"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-md-4"
+          >
+            <img
+              alt=""
+              className="img-circle img-thumbnail isTooltip"
+              data-original-title="Usuario"
+              src="https://bootdey.com/img/Content/user-453533-fdadfd.png"
+              style={
+                Object {
+                  "width": "600px",
+                }
+              }
+              title=""
+            />
+            <ul
+              className="list-inline ratings text-center"
+              title="Ratings"
+            >
+              <li>
+                <a
+                  href="#"
+                >
+                  <span
+                    className="glyphicon glyphicon-star"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                >
+                  <span
+                    className="glyphicon glyphicon-star"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                >
+                  <span
+                    className="glyphicon glyphicon-star"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                >
+                  <span
+                    className="glyphicon glyphicon-star"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                >
+                  <span
+                    className="glyphicon glyphicon-star"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            className="col-md-6"
+          >
+            <strong>
+              Information
+            </strong>
+            <br />
+            <div
+              className="table-responsive"
+            >
+              <table
+                className="table table-condensed table-responsive table-user-information"
+              >
+                <tbody>
+                  <tr>
+                    <td>
+                      <strong>
+                        <span
+                          className="glyphicon glyphicon-asterisk text-primary"
+                        />
+                        Identificacion
+                      </strong>
+                    </td>
+                    <td
+                      className="text-primary"
+                    />
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>
+                        <span
+                          className="glyphicon glyphicon-user  text-primary"
+                        />
+                        Name
+                      </strong>
+                    </td>
+                    <td
+                      className="text-primary"
+                    />
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>
+                        <span
+                          className="glyphicon glyphicon-cloud text-primary"
+                        />
+                        Last Name
+                      </strong>
+                    </td>
+                    <td
+                      className="text-primary"
+                    />
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>
+                        <span
+                          className="glyphicon glyphicon-envelope text-primary"
+                        />
+                        Username
+                      </strong>
+                    </td>
+                    <td
+                      className="text-primary"
+                    />
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>
+                        <span
+                          className="glyphicon glyphicon-eye-open text-primary"
+                        />
+                        Location
+                      </strong>
+                    </td>
+                    <td
+                      className="text-primary"
+                    />
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>
+                        <span
+                          className="glyphicon glyphicon-phone text-primary"
+                        />
+                        Mobile
+                      </strong>
+                    </td>
+                    <td
+                      className="text-primary"
+                    />
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Profile>
+`;

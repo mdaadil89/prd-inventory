@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Products Snapshot renders correctly 1`] = `
+<Product>
+  <Row
+    noGutters={false}
+  >
+    <div
+      className="row"
+    >
+       
+    </div>
+  </Row>
+</Product>
+`;

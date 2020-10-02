@@ -12,6 +12,7 @@ class LoginPage extends React.Component {
             email: '',
             password: '',
             submitted: false,
+            
         };
 
        this.handleChange = this.handleChange.bind(this);
@@ -41,38 +42,41 @@ class LoginPage extends React.Component {
         console.log(this.props)
         const { email, password, submitted } = this.state;
         return (
-                <>
+                <div className="form-container">
                 <h2>Login</h2>
                 <form name="form" onSubmit={this.handleSubmit}>
                     <div className={'form-group' + (submitted && !email ? ' has-error' : '')}>
                         <label htmlFor="email">Username</label>
-                        <input type="text" className="form-control" name="email" value={email} onChange={this.handleChange} />
+                        <input type="text" id="email" className="form-control" name="email" value={email} onChange={this.handleChange} />
                         {submitted && !email &&
                             <div className="help-block" >Username is required</div>
                         }
                     </div>
                     <div className={'form-group' + (submitted && !password ? ' has-error' : '')}>
                         <label htmlFor="password">Password</label>
-                        <input type="password" className="form-control" name="password" value={password} onChange={this.handleChange} />
+                        <input type="password" id="password" className="form-control" name="password" value={password} onChange={this.handleChange} />
                         {submitted && !password &&
                             <div className="help-block">Password is required</div>
                         }
                     </div>
                     <div className="form-group">
-                        <button className="btn btn-primary">Login</button>
+                        <button className="btn btn-primary" id="login">Login</button>
                    
                         <Link to="/register" className="btn btn-link">Register</Link>
                     </div>
                 </form>
-            </>
+            </div>
         );
     }
 }
 
 function mapStateToProps(state) {
-    const { loggingIn } = state.authentication;
+
+    
+    const { loggingIn } = state.authentication || false;
+    
     return { loggingIn };
-  }
+  } 
   
   function mapDispatchToProps(dispatch)  {
     return {

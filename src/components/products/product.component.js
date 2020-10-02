@@ -4,12 +4,12 @@ import {Link} from 'react-router-dom'
 
 const Product = ({products, match, onchange, viewobj }) => {
    
-    const {pname,pdesc,pmanu,pprice,pqty} = viewobj
-    const addId = (id) => {
-        onchange(id);
+    const {pname,pdesc,pmanu,pprice,pqty} = viewobj || {}
+    const addId = (id) => { 
+        onchange(id); 
     }
-    
-    return (
+     
+    return ( 
         <Row>
             
         { 

@@ -15,17 +15,17 @@ import * as Yup from 'yup'
 
 const ProductForm = ( props) => {
     
-  const { addMyProduct, editMyProduct , history, type , product } = props
+  const { addMyProduct, editMyProduct , history, type , product } = props 
 
   console.log('products', product)
 
 
   const initialValues = {
-    name: product.name || '',
-    description: product.description|| '',
-    manufacturer:  product.manufacturer || '',
-    price: product.price || '',
-    qty: product.qty || ''
+    name: product?.name || '',
+    description: product?.description|| '',
+    manufacturer:  product?.manufacturer || '',
+    price: product?.price || '',
+    qty: product?.qty || ''
   }
   
   

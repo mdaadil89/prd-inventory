@@ -1,0 +1,4 @@
+npm test about.component.test searchb
+ox.component.test LoginPage.test aboutpage.component.test RegistrationPage.compo
+nent.test ProductViewPage.component.test productsPage.component.test productform
+.component.test profile.component.test

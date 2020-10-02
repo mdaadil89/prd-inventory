@@ -103,7 +103,6 @@
       "location": "kolkata",
       "mobile": "9123709523"
     },
-
     {
       "id": "9156f101-7d58-4cba-aff0-2839e7e27022",
       "firstName": "Aadil",
@@ -112,7 +111,15 @@
       "password": "aadila",
       "location": "kolkata",
       "mobile": "9123709523"
+    },
+    {
+      "id": "15c44c2c-1e10-4d4a-93ea-3274fd479ac7",
+      "firstName": "Surajit",
+      "lastName": "Mondal",
+      "email": "sm@g.com",
+      "password": "surajit",
+      "location": "Kolkata",
+      "mobile": "+91349595999"
     }
-   
   ]
 }

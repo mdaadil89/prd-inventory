@@ -46,7 +46,7 @@ class Profile extends  React.Component{
                               </strong>
                           </td>
                           <td className="text-primary">
-                              {user.id}    
+                              {user?.id}    
                           </td>
                       </tr>
                       <tr>    
@@ -57,7 +57,7 @@ class Profile extends  React.Component{
                               </strong>
                           </td>
                           <td className="text-primary">
-                            {user.firstName}
+                            {user?.firstName}
                           </td>
                       </tr>
                       <tr>        
@@ -68,7 +68,7 @@ class Profile extends  React.Component{
                               </strong>
                           </td>
                           <td className="text-primary">
-                            {user.lastName}
+                            {user?.lastName}
                           </td>
                       </tr>
   
@@ -80,7 +80,7 @@ class Profile extends  React.Component{
                               </strong>
                           </td>
                           <td className="text-primary">
-                            {user.email}
+                            {user?.email}
                           </td>
                       </tr>
                       <tr>        
@@ -91,7 +91,7 @@ class Profile extends  React.Component{
                               </strong>
                           </td>
                           <td className="text-primary">
-                        {user.location}
+                        {user?.location}
                           </td>
                       </tr>
                       <tr>        
@@ -102,12 +102,12 @@ class Profile extends  React.Component{
                               </strong>
                           </td>
                           <td className="text-primary">
-                            {user.mobile}
+                            {user?.mobile}
                           </td>
                       </tr>
                                                
                   </tbody>
-              </table>
+              </table> 
               </div>
           </div>
       </div>

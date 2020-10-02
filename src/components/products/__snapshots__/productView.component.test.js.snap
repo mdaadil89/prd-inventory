@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AllProductsPage Snapshot renders correctly 1`] = `
+<ProductView>
+  <div
+    style={
+      Object {
+        "justifyContent": "centre",
+      }
+    }
+  >
+    <Card
+      body={false}
+      border="primary"
+      style={
+        Object {
+          "float": "none",
+          "margin": "0 auto",
+          "marginBottom": "10px",
+          "width": "20rem",
+        }
+      }
+    >
+      <div
+        className="card border-primary"
+        style={
+          Object {
+            "float": "none",
+            "margin": "0 auto",
+            "marginBottom": "10px",
+            "width": "20rem",
+          }
+        }
+      >
+        <CardHeader>
+          <div
+            className="card-header"
+          >
+            <b />
+          </div>
+        </CardHeader>
+        <CardBody>
+          <div
+            className="card-body"
+          >
+            <br />
+            <b />
+            <br />
+            <b>
+              Made by 
+            </b>
+            <br />
+            <b>
+              Rs. 
+            </b>
+            <br />
+            <b>
+              Qty : 
+            </b>
+            <br />
+          </div>
+        </CardBody>
+        <button
+          className="btn btn-success"
+          onClick={[Function]}
+        >
+          Go Back to List
+        </button>
+      </div>
+    </Card>
+  </div>
+</ProductView>
+`;
